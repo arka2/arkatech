@@ -38,6 +38,12 @@
 }
 .menu-link {
   padding: 5px 10px;
+  transition: 0.5s;
+}
+.menu-link:hover{
+  text-decoration: underline;
+  text-decoration-color: black;
+  transition-property: text-decoration;
 }
 
 /*
