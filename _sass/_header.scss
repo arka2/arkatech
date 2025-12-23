@@ -28,6 +28,10 @@
   padding-left: 10px;
   float: left;
 }
+.header-row {
+  display: flex;
+  justify-content: center;
+}
 .menu-list {
   line-height: $header-thickness;
   float: right;
