@@ -13,7 +13,7 @@ The game is being developed in Unity, and I used ShaderGraph for this shader.
 
 ## Demo
 
-![A small sprout character, Glas, stands between flowering rocks. The line art for each of the rocks flashes gold periodically.](https://arkatu.com/arkatech/assets/gif/gif_01.gif)
+![A small sprout character, Glas, stands between flowering rocks. The line art for each of the rocks flashes gold periodically.](https://arkatu.com/arkatech/assets/gif/gif_02.gif)
 
 ## Details
 
