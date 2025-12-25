@@ -18,6 +18,8 @@ The game is being developed in Unity, and I used ShaderGraph for this shader.
 
 ## Details
 
+![Alt text]({{ site.github.url }}/assets/img/inspector_01.png)
+
 I exposed the shine color, angle, and speed. I also exposed the drop shadow color, its distance, and the line art color.
 
 The shader uses a normal map for 2D lighting and a separate line art map. I WANT TO COMBINE THE NORMAL MAP AND THE LINE ART MAP TO ONLY HAVE ONE EXTRA TEXTURE. The normal map's alpha channel contains the line art alpha.
