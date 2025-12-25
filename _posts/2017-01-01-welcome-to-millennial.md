@@ -6,6 +6,7 @@ categories: documentation
 tags: [documentation]
 image: gif_01.gif
 ---
+*Character designs by Charlotte Pang \| UI by Valerie Caña*
 
 Shards Between Us is an isometric game made entirely with 2D assets. With the art inspired by Art Nouveau and stained glass, I wanted to show metallic line art.
 
