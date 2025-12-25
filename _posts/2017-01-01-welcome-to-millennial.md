@@ -4,7 +4,7 @@ title: "Metallic Gold Line Art Shader"
 author: "Arka Tu"
 categories: documentation
 tags: [documentation]
-image: cuba-1.jpg
+image: gif_01.gif
 ---
 
 Shards Between Us is an isometric game made entirely with 2D assets. With the art inspired by Art Nouveau and stained glass, I wanted to show metallic line art.
@@ -26,7 +26,11 @@ used painted sprites with no dynamic lighting.
 
 ## The Problem
 
+![Alt Text](../assets/img/screenshot_01.png)
+
 The first pass of our game had all of the art as sprites with no shaders. I wanted the line art to look like gold, so I baked in the metallic shine into the sprite. Unfortunately, this made the level difficult to read. When we started on the second pass of Shards, I wanted to update the art to be more flexible and dynamic. I added normal maps to the tiles and, more importantly, started working on a line art shader.
+
+![Alt Text](../assets/img/screenshot_02.png)
 
 ## The Solution
 
