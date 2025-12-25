@@ -26,11 +26,11 @@ used painted sprites with no dynamic lighting.
 
 ## The Problem
 
-![Alt Text](screenshot_01.png)
+![Alt Text](../assets/img/screenshot_01.png)
 
 The first pass of our game had all of the art as sprites with no shaders. I wanted the line art to look like gold, so I baked in the metallic shine into the sprite. Unfortunately, this made the level difficult to read. When we started on the second pass of Shards, I wanted to update the art to be more flexible and dynamic. I added normal maps to the tiles and, more importantly, started working on a line art shader.
 
-![Alt Text](screenshot_02.png)
+![Alt Text](../assets/img/screenshot_02.png)
 
 ## The Solution
 
