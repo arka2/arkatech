@@ -4,8 +4,16 @@
   -ms-transition: $transition;
   -moz-transition: $transition;
   transition: $transition;
+  transition-property: border-color;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 25%;
+  border-width: 1px;
   &:hover{
-    color: $color;
+    border-style: solid;
+    border-color: black;
+    border-radius: 25%;
+    border-width: 1px;
   }
 }
 

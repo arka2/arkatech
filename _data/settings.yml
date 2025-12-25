@@ -16,8 +16,6 @@ menu:
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
-- {icon: 'twitter', link:    'https://twitter.com/paululele'}
-- {icon: 'facebook', link:   'https://www.facebook.com/paululele'}
 - {icon: 'instagram', link:  'https://instagram.com/paululele'}
 - {icon: 'envelope', link:   'mailto:hello@paulle.ca'}
 - {icon: 'rss-square', link: 'feed.xml'}
@@ -27,6 +25,10 @@ social:
 pagination:
   next_page: 'Newer'
   previous_page: 'Older'
+
+hide_post_share: true
+hide_post_date: true
+hide_related_posts: true
 
 sharing_button_prompt: 'Feel free to share!'
 
