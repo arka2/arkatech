@@ -22,7 +22,33 @@ The game is being developed in Unity, and I used ShaderGraph for this shader.
 
 I exposed the shine color, speed, width, opacity, and angle. I added a variable to adjust the color of the line art as needed. I also exposed a drop shadow color for the line art and its distance.
 
-The shader uses a normal map for 2D lighting and a separate line art map. I WANT TO COMBINE THE NORMAL MAP AND THE LINE ART MAP TO ONLY HAVE ONE EXTRA TEXTURE. The normal map's alpha channel contains the line art alpha.
+Originally, the shader uses a normal map for 2D lighting and a separate line art map, but I realized we only needed the alpha channel from the line art. I wrote a Python script to replace the normal map's alpha channel with the corresponding line art's. I then saved the new image as a DDS file, so the individual channels would remain intact and still be usable in the shader.
+
+```
+...
+# Do the files exist?
+if os.path.isfile(normalFile) and os.path.isfile(alpha):
+    with Image(filename=normalFile) as img:
+        with Image(filename=alpha) as alphaImg:
+
+            # Make sure the image's alpha channel is enabled
+            if img.alpha_channel == False:
+                img.alpha_channel = True
+
+            # Copy alpha channel from line art to normal map
+            img.composite(image=alphaImg, operator='copy_alpha')
+
+            # Convert to DDS
+            img.compression = "dxt5"
+            dds_file = f"{imageName}_{normalSuffix}.dds"
+            
+            # Save as DDS
+            img.save(filename=dds_file)
+else:
+    print('invalid files')
+    return -1
+...
+```
 
 ## The Problem
 
