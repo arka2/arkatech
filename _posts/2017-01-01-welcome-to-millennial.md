@@ -68,7 +68,18 @@ I originally added a shine across the entire screen's line art, but we decided t
 
 This led me to write a short script to get a different time interval for the objects rendered. With this, the shine looks more natural.
 
-Code Block
+```
+...
+private void SetRandomTimeOffset() {
+
+    float randomValue = UnityEngine.Random.value * ScaleRandom;
+    _propertyBlock.SetFloat(RandomTimeOffsett, randomValue);
+    _propertyBlock.SetTexture("_MainTex", tex);
+
+    _renderer.SetPropertyBlock(_propertyBlock);
+}
+...
+```
 
 Picture
 
