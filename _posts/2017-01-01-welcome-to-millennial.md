@@ -13,6 +13,7 @@ Shards Between Us is an isometric game made entirely with 2D assets. With the ar
 The game is being developed in Unity, and I used ShaderGraph for this shader.
 
 ## Details
+---
 
 ![Alt text]({{ site.github.url }}/assets/img/inspector_01.png)
 
@@ -47,6 +48,7 @@ else:
 ```
 
 ## The Problem
+---
 
 The first pass of our game had all of the art as sprites with no shaders. All the lighting was painted in as well. I wanted the line art to look like gold, so I baked in the metallic shine into the sprite. Unfortunately, this made the level difficult to read. When we started on the second pass of Shards, I wanted to update the art to be more flexible and dynamic. I added normal maps to the tiles and, more importantly, started working on a line art shader.
 
@@ -55,6 +57,7 @@ The first pass of our game had all of the art as sprites with no shaders. All th
 ![Alt Text](https://arkatu.com/arkatech/assets/img/screenshot_02.png)
 
 ## The Solution
+---
 
 When we started development on Shards Between Us, I discovered that I might be able to implement a shine across the line art by using shaders. I watched YouTube tutorials and scoured the Unity ShaderGraph documentation as I experimented in-engine. I ended up with a shader that takes a sprite's line art, colors it gold, and adds a subtle drop shader under the line art.
 
