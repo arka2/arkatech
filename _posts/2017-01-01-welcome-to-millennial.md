@@ -48,27 +48,24 @@ else:
 
 ## The Problem
 
+The first pass of our game had all of the art as sprites with no shaders. All the lighting was painted in as well. I wanted the line art to look like gold, so I baked in the metallic shine into the sprite. Unfortunately, this made the level difficult to read. When we started on the second pass of Shards, I wanted to update the art to be more flexible and dynamic. I added normal maps to the tiles and, more importantly, started working on a line art shader.
+
 ![Alt Text](https://arkatu.com/arkatech/assets/img/screenshot_01.png)
 
 ![Alt Text](https://arkatu.com/arkatech/assets/img/screenshot_02.png)
-
-The first pass of our game had all of the art as sprites with no shaders. All the lighting was painted in as well. I wanted the line art to look like gold, so I baked in the metallic shine into the sprite. Unfortunately, this made the level difficult to read. When we started on the second pass of Shards, I wanted to update the art to be more flexible and dynamic. I added normal maps to the tiles and, more importantly, started working on a line art shader.
 
 ## The Solution
 
 When we started development on Shards Between Us, I discovered that I might be able to implement a shine across the line art by using shaders. I watched YouTube tutorials and scoured the Unity ShaderGraph documentation as I experimented in-engine. I ended up with a shader that takes a sprite's line art, colors it gold, and adds a subtle drop shader under the line art.
 
-Screenshot of ShaderGraph?
 ![Alt Text](https://arkatu.com/arkatech/assets/img/nodes_02.png)
-*Node text*
 
 ![Alt Text](https://arkatu.com/arkatech/assets/img/nodes_03.png)
-*Node Text*
+
+I originally added a shine across the entire screen's line art, but we decided to limit the shine to interactable objects. We wanted this to help the player figure out what they could interact with. Originally, the shine one each object would sync.
 
 ![A small sprout character, Glas, stands between flowering rocks. The line art for each of the rocks flashes gold periodically.](https://arkatu.com/arkatech/assets/gif/gif_03.gif)
 *All of the line art has the glint, not just certain objects.*
-
-I originally added a shine across the entire screen's line art, but we decided to limit the shine to interactable objects. We wanted this to help the player figure out what they could interact with. Originally, the shine one each object would sync.
 
 This led me to write a short script to get a different time interval for the objects rendered. With this, the shine looks more natural.
 
