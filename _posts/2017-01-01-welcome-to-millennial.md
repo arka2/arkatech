@@ -65,7 +65,6 @@ When we started development on Shards Between Us, I discovered that I might be a
 I originally added a shine across the entire screen's line art, but we decided to limit the shine to interactable objects. We wanted this to help the player figure out what they could interact with. Originally, the shine one each object would sync.
 
 ![A small sprout character, Glas, stands between flowering rocks. The line art for each of the rocks flashes gold periodically.](https://arkatu.com/arkatech/assets/gif/gif_03.gif)
-*All of the line art has the glint, not just certain objects.*
 
 This led me to write a short script to get a different time interval for the objects rendered. With this, the shine looks more natural.
 
@@ -84,11 +83,3 @@ private void SetRandomTimeOffset() {
 ![Alt Text](https://arkatu.com/arkatech/assets/img/nodes_01.png)
 
 ![A small sprout character, Glas, stands between flowering rocks. The line art for each of the rocks flashes gold periodically.](https://arkatu.com/arkatech/assets/gif/gif_02.gif)
-
-## Getting Started
-
-[Getting Started]({{ site.github.url }}{% post_url 2016-10-10-getting-started %}): getting started with installing Millennial, whether you are completely new to using Jekyll, or simply just migrating to a new Jekyll theme.
-
-## Example Content
-
-[Text and Formatting]({{ site.github.url }}{% post_url 2016-09-09-text-formatting %})
