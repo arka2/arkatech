@@ -12,10 +12,6 @@ Shards Between Us is an isometric game made entirely with 2D assets. With the ar
 
 The game is being developed in Unity, and I used ShaderGraph for this shader.
 
-## Demo
-
-![A small sprout character, Glas, stands between flowering rocks. The line art for each of the rocks flashes gold periodically.](https://arkatu.com/arkatech/assets/gif/gif_02.gif)
-
 ## Details
 
 ![Alt text]({{ site.github.url }}/assets/img/inspector_01.png)
@@ -90,7 +86,7 @@ private void SetRandomTimeOffset() {
 ```
 ![Alt Text](https://arkatu.com/arkatech/assets/img/nodes_01.png)
 
-Gif of finished shader
+![A small sprout character, Glas, stands between flowering rocks. The line art for each of the rocks flashes gold periodically.](https://arkatu.com/arkatech/assets/gif/gif_02.gif)
 
 ## Getting Started
 
