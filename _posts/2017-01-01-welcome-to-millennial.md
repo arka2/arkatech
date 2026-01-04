@@ -64,7 +64,13 @@ When we started development on Shards Between Us, I discovered that I might be a
 
 Screenshot of ShaderGraph?
 ![Alt Text](https://arkatu.com/arkatech/assets/img/nodes_02.png)
+*Node text*
+
 ![Alt Text](https://arkatu.com/arkatech/assets/img/nodes_03.png)
+*Node Text*
+
+![A small sprout character, Glas, stands between flowering rocks. The line art for each of the rocks flashes gold periodically.](https://arkatu.com/arkatech/assets/gif/gif_03.gif)
+*All of the line art has the glint, not just certain objects.*
 
 I originally added a shine across the entire screen's line art, but we decided to limit the shine to interactable objects. We wanted this to help the player figure out what they could interact with. Originally, the shine one each object would sync.
 
@@ -83,8 +89,6 @@ private void SetRandomTimeOffset() {
 ...
 ```
 ![Alt Text](https://arkatu.com/arkatech/assets/img/nodes_01.png)
-
-Picture
 
 Gif of finished shader
 
