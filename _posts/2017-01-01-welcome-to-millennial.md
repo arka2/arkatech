@@ -63,6 +63,8 @@ The first pass of our game had all of the art as sprites with no shaders. All th
 When we started development on Shards Between Us, I discovered that I might be able to implement a shine across the line art by using shaders. I watched YouTube tutorials and scoured the Unity ShaderGraph documentation as I experimented in-engine. I ended up with a shader that takes a sprite's line art, colors it gold, and adds a subtle drop shader under the line art.
 
 Screenshot of ShaderGraph?
+![Alt Text](https://arkatu.com/arkatech/assets/img/nodes_02.png)
+![Alt Text](https://arkatu.com/arkatech/assets/img/nodes_03.png)
 
 I originally added a shine across the entire screen's line art, but we decided to limit the shine to interactable objects. We wanted this to help the player figure out what they could interact with. Originally, the shine one each object would sync.
 
@@ -80,6 +82,7 @@ private void SetRandomTimeOffset() {
 }
 ...
 ```
+![Alt Text](https://arkatu.com/arkatech/assets/img/nodes_01.png)
 
 Picture
 
