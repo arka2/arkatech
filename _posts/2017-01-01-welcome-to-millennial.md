@@ -21,7 +21,7 @@ I exposed the shine color, speed, width, opacity, and angle. I added a variable 
 
 Originally, the shader uses a normal map for 2D lighting and a separate line art map, but I realized we only needed the alpha channel from the line art. I wrote a Python script to replace the normal map's alpha channel with the corresponding line art's. I then saved the new image as a DDS file, so the individual channels would remain intact and still be usable in the shader.
 
-```
+```c#
 ...
 # Do the files exist?
 if os.path.isfile(normalFile) and os.path.isfile(alpha):
@@ -71,7 +71,7 @@ I originally added a shine across the entire screen's line art, but we decided t
 
 This led me to write a short script to get a different time interval for the objects rendered. With this, the shine looks more natural.
 
-```
+```c#
 ...
 private void SetRandomTimeOffset() {
 
