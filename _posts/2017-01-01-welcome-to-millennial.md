@@ -83,6 +83,6 @@ private void SetRandomTimeOffset() {
 }
 ...
 ```
-![Alt Text](https://arkatu.com/arkatech/assets/img/nodes_01.png)
+![Screenshot of ShaderGraph, showing the nodes used to calculate the random time offset for a game object.](https://arkatu.com/arkatech/assets/img/nodes_01.png)
 
 ![Two characters stand on blocks surrounded by vegetation. A shard of glass and a tall, broken door glint periodically, showing the finished shader.](https://arkatu.com/arkatech/assets/gif/gif_02.gif)
