@@ -7,11 +7,9 @@ disqus:
 google-ID: 'UA-112060364-2'
 
 menu:
-- {name: 'Shaders',            url: 'facts'}
-- {name: 'Documentation',      url: 'documentation'}
+- {name: 'Shaders',            url: 'shaders'}
 - {name: 'Concept Art',        url: 'resources'}
-- {name: 'About',              url: 'about'}
-- {name: 'Contact',            url: 'contact'}
+- {name: 'About Me',              url: 'about'}
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:

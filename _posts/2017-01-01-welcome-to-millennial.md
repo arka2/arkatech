@@ -2,8 +2,8 @@
 layout: post
 title: "Metallic Gold Line Art Shader"
 author: "Arka Tu"
-categories: documentation
-tags: [documentation]
+categories: shaders
+tags: [shaders]
 image: gif_01.gif
 ---
 *Character designs by Charlotte Pang \| UI by Valerie Caña*
