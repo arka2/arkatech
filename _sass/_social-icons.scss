@@ -76,3 +76,25 @@
   padding: 5px;
   @include social-media-icon($bluesky-color, $icon-transition-time)
 }
+
+.bluesky-icon {
+  padding: 5px;
+  -webkit-transition: $icon-transition-time;
+  -o-transition: $icon-transition-time;
+  -ms-transition: $icon-transition-time;
+  -moz-transition: $icon-transition-time;
+  transition: $icon-transition-time;
+  transition-property: border-color;
+  height:14px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 25%;
+  border-width: 1px;
+}
+
+.bluesky-icon:hover {
+  border-style: solid;
+  border-color: white;
+  border-radius: 25%;
+  border-width: 1px;
+}
