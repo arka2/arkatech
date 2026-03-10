@@ -4,12 +4,12 @@ title: "Rendering with OpenGL"
 author: "Arka Tu"
 categories: pipeline
 tags: [pipeline]
-image: opengl_09.png
+image: opengl_14.png
 ---
 
 I built a scene using OpenGL, combining basic meshes, texturing them, and adding lights.
 
-## Details
+## Setting Up Meshes and Textures
 ---
 
 I set up what is essentially just a still life to use as reference.
@@ -62,9 +62,90 @@ switch (wrapping) {
 }
 ```
 
-## Results
+![Screenshot of scene, showing the textured objects against a marble plane with lighting.](https://arkatu.com/arkatech/assets/img/opengl_09.png)
+
+![Side view of scene with the glass of the bottle more visible.](https://arkatu.com/arkatech/assets/img/opengl_10.png)
+
+## Adding Shadows
 ---
 
-![Screenshot of finished scene, showing the textured objects against a marble plane with lighting.](https://arkatu.com/arkatech/assets/img/opengl_09.png)
+Later, I wanted to implement cast shadows. I had two lights in the scene, a point light and an ATMO light. Because I was learning how depth maps worked, I decided to only use the point light when calculating shadows. I generated a depth map from the perspective of the point light,
 
-![Side view of finished scene with the glass of the bottle more visible.](https://arkatu.com/arkatech/assets/img/opengl_10.png)
+```c++
+// Calculate lightspace matrix for shaders
+float near_plane = 0.0f, far_plane = 40.0f;
+
+glm::mat4 lightProjection = glm::ortho(
+    -10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
+
+glm::mat4 lightView = glm::lookAt(
+    glm::vec3(-10.0f, 4.0f, 2.0f),
+    glm::vec3(0.0f, 0.0f, 0.0f),
+    glm::vec3(0.0f, 1.0f, 0.0f));
+
+glm::mat4 lightSpaceMatrix = lightProjection * lightView;
+
+... 
+
+// Pass in matrix to depth shader
+g_DepthShaderManager->use();
+g_DepthShaderManager->setMat4Value("lightSpaceMatrix", lightSpaceMatrix);
+
+// Clear the frame and z buffers
+glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+// Render to depth map
+glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
+glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
+glClear(GL_DEPTH_BUFFER_BIT);
+
+g_SceneManager->RenderScene("depthMap");
+```
+
+![Screenshot of generated depth map](https://arkatu.com/arkatech/assets/img/opengl_15.png)
+
+In the main fragment shader, I used the depth map to calculate what fragments were in shadow.
+
+```glsl
+float CalcShadow(vec4 fragPosLightSpace, vec3 normal, vec3 lightDir)
+{
+   // perform perspective divide
+   vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
+   // transform to [0,1] range
+   projCoords = projCoords * 0.5 + 0.5;
+   // get closest depth value from light's perspective (using [0,1] range fragPosLight as coords)
+   float closestDepth = texture(depthMap, projCoords.xy).r; 
+   // get depth of current fragment from light's perspective
+   float currentDepth = projCoords.z;
+
+   float bias = max(0.003 * (1.0 - dot(normal, lightDir)), 0.002);  
+   // check whether current frag pos is in shadow
+   float shadow = 0.0;
+   vec2 texelSize = 1.0 / textureSize(depthMap, 0);
+   for(int x = -1; x <= 1; ++x)
+   {
+      for(int y = -1; y <= 1; ++y)
+      {
+         float pcfDepth = texture(depthMap, projCoords.xy + vec2(x, y) * texelSize).r; 
+         shadow += currentDepth - bias > pcfDepth ? 1.0 : 0.0;        
+      }    
+   }
+   shadow /= 15.0; 
+
+   if(projCoords.z > 1.0)
+   {
+      shadow = 0.0;
+   }
+      
+   return shadow;
+}
+```
+
+## Results
+---
+![Screenshot of scene, showing the objects casting shadows on the marble plane.](https://arkatu.com/arkatech/assets/img/opengl_14.png)
+
+## Improvements
+---
+Right now, the cast shadows are calculated as directional shadows instead of point shadows. Becaues the point light should cast shadows around itself, the current directional shadows don't behave as you might expect. Point shadows could be rendered using a cube map. Each face of the cube would hold a depth map, which would be generated based on the direction of the face. Shadows would then be calculated based on the projection of the cube map's faces, giving the illusion of point shadows.
