@@ -148,4 +148,4 @@ float CalcShadow(vec4 fragPosLightSpace, vec3 normal, vec3 lightDir)
 
 ## Improvements
 ---
-Right now, the cast shadows are calculated as directional shadows instead of point shadows. Becaues the point light should cast shadows around itself, the current directional shadows don't behave as you might expect. Point shadows could be rendered using a cube map. Each face of the cube would hold a depth map, which would be generated based on the direction of the face. Shadows would then be calculated based on the projection of the cube map's faces, giving the illusion of point shadows.
+Right now, the cast shadows are calculated as directional shadows instead of point shadows. Becaues the point light should cast shadows around itself, the current directional shadows don't behave as you might expect. Point shadows could be rendered using a cube map. Each face of the cube would hold a depth map, which would be generated based on the direction of the face. Shadows would then be calculated based on the projection of the cube map's faces, giving the illusion of point shadows. I would like to implement point shadows to make the light behave more realistically.
