@@ -6,13 +6,9 @@ categories: tools
 tags: [tools]
 image: tile-editor_03.png
 ---
-Shards Between Us is an isometric game, and all the game assets are 2D. Our team has been using Unity's 2D Tile Editor package to manage and place our tiles. However, because of how our tilemaps are set up, the built in shortcuts aren't very helpful for us.
+Shards Between Us is an isometric game, and all the game assets are 2D. Our team has been using Unity's 2D Tile Editor package to manage and place our tiles. I started looking into how to modify the Tile Editor to be more useful for us and to explore Unity's tooling.
 
-Our main programmer and I have been working on ways to make it easier for our narrative designer to create levels. I've worked on modifying the Tile Editor to show more informative tooltips and to use shortcut   s that are more useful for our tilemap set up.
-
-Our tiles are placed on even Z-positions, and we have sloped tiles placed at the Z-positions in between. For example, one layer of tiles might be on Z-position 0, and the next layer up will be at 2. A sloped tile might be placed at 1, which would allow the player to move between positions 0 and 2.
-
-The default shortcuts included with the Tile Editor only change the Z-position by 1. I modified them to include shortcuts that change the Z-position by 2 using the minus and equals keys. The user can change it by 1 by holding down 'Control' and using the same keys.
+One of the first things I looked into was the Tile Editor's shortcuts. Because of how our tilemaps are set up, the default shortcuts aren't very helpful for us. Our tiles are placed on even Z-positions, and we have sloped tiles placed at the Z-positions in between. For example, one layer of tiles might be on Z-position 0, and the next layer up will be at 2. A sloped tile might be placed at 1, which would allow the player to move between positions 0 and 2. The default shortcuts included with the Tile Editor only change the Z-position by 1. I modified them to include shortcuts that change the Z-position by 2 using the minus and equals keys. The user can change it by 1 by holding down 'Control' and using the same keys.
 
 ```c#        
 // Added to make moving between Z-axis by 2 easier
